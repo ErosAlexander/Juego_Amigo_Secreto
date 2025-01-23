@@ -9,10 +9,24 @@ function agregarAmigo(){
         listaNombres.push(nombre);
         let miLista = document.getElementById("listaAmigos");
         let elementoLista = document.createElement("li");
+
         elementoLista.textContent = nombre;
         miLista.appendChild(elementoLista);
     }
     console.log(listaNombres);
+}
+
+
+function sortearAmigo() {
+    let numeroRandomico = listaNombres.length
+    let amigoRandom = Math.floor(Math.random()*numeroRandomico);
+    let resultado = document.getElementById("resultado");
+    let amigoSecreto = document.createElement("li")
+
+    amigoSecreto.textContent = "El amigo secreto es: " + listaNombres[amigoRandom];
+    resultado.appendChild(amigoSecreto);
+
+    document.getElementById("listaAmigos").style.display = "none";
 }
 
 
@@ -71,5 +85,4 @@ function agregarAmigo(){
 //Agregar nombres: Los usuarios escribirán el nombre de un amigo en un campo de texto y lo agregarán a una lista visible al hacer clic en "Adicionar" X
 //Validar entrada: Si el campo de texto está vacío, el programa mostrará una alerta pidiendo un nombre válido. X
 //Visualizar la lista: Los nombres ingresados aparecerán en una lista debajo del campo de entrada. X
-
-//Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo", se seleccionará aleatoriamente un nombre de la lista y se mostrará en la página. 
+//Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo", se seleccionará aleatoriamente un nombre de la lista y se mostrará en la página. X
